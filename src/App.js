@@ -8,6 +8,7 @@ import Home from './component/Home/Home';
 import Login from "./component/Login/Login";
 import PageNotFound from "./component/PageNotFound/PageNotFound";
 import PrivateRoute from "./component/PrivateRoute/PrivateRoute";
+import ProductDetails from "./component/ProductDetails/ProductDetails";
 import Register from "./component/Register/Register";
 import Service from "./component/Service/Service";
 import Shop from "./component/Shop/Shop";
@@ -20,33 +21,19 @@ function App() {
         <Router>
           <Header></Header>
           <Switch>
-            <Route exact path="/">
-              <Home></Home>
-            </Route>
-            <Route path="/home">
-              <Home></Home>
-            </Route>
-            <Route path="/service">
-              <Service></Service>
-            </Route>
-            <Route path="/shop/:id">
-              <Shop></Shop>
-            </Route>
+            <Route exact path="/" component={Home}/>
+            <Route path="/home" component={Home}/>
+            <Route exact path="/service" component={Service}/>  
+            <Route path='/service/:productId' component={ProductDetails}/>
+            <Route path="/shop" component={Shop}/>
             <PrivateRoute path="/blog">
               <Blog></Blog>
             </PrivateRoute>
-            <Route path="/contact">
-              <Contact></Contact>
-            </Route>
-            <Route path="/login">
-              <Login></Login>
-            </Route>
-            <Route path="/register">
-              <Register></Register>
-            </Route>
-            <Route path="*">
-              <PageNotFound></PageNotFound>
-            </Route>
+            <Route path="/contact" component={Contact}/>
+            {/* <Route path="/productDetails" component={ProductDetails}/> */}
+            <Route path="/login" component={Login}/>
+            <Route path="/register" component={Register}/>
+            <Route path="*" component={PageNotFound}/>
           </Switch>
           <Footer></Footer>
         </Router>
