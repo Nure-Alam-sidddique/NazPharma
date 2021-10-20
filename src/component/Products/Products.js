@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Product from '../Product/Product';
-const Service = () => {
+const Products = () => {
     const  [products, setProducts ]= useState([]);
     useEffect(() => {
         fetch('./product.json')
@@ -29,4 +29,4 @@ const Service = () => {
     );
 };
 
-export default Service;
+export default Products;

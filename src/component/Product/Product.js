@@ -16,7 +16,7 @@ const Product = (props) => {
             <p className="leading-relaxed mb-3">{description.slice(0,30)}</p>
           </div>
         </div>
-        <button type="button"><Link to={`/service/${id}`  }>Product Details</Link></button>
+        <button type="button"><Link to={`/product/${id}`  }>Product Details</Link></button>
       </div>
     );
 };

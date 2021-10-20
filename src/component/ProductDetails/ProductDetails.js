@@ -16,7 +16,7 @@ const ProductDetails = () => {
     }, []);
     console.log( 'comes from ', product)
     return (
-        <div>
+        <div className="mt-20">
         
             <h1>This is Product Details { productId}</h1>
         </div>
