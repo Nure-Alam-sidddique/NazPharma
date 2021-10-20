@@ -5,9 +5,9 @@ Firebase Live Link [NazPharma Live Link](https://naz-pharma.web.app/) to view it
 
 ## Naz Pharma Services
 
--Best Product
--No Extra Delivery Cost
--First Come First Services
--Aborad Drug Avaiable
--All Brach Product Avaiable
--Drug Buy Online
+- Best Product
+- No Extra Delivery Cost
+- First Come First Services
+- Aborad Drug Avaiable
+- All Brach Product Avaiable
+- Drug Buy Online
