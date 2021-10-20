@@ -1,7 +1,7 @@
 # Naz Pharma
 
 Naz Pharm GitHub Repostory [NazPhama Repositoy Link](https://github.com/Programming-Hero-Web-Course3/healthcare-related-website-Nure-Alam-sidddique).
-Firebase Live Link [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Firebase Live Link [NazPharma Live Link](https://naz-pharma.web.app/) to view it in the browser.
 
 ## Naz Pharma Services
 
