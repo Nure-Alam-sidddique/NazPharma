@@ -4,15 +4,16 @@ import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 const Register = () => {
-   const {
-     signInUsingGoogle,
-     signInUsingGithub,
-     signInUsingFacebook,
-     emailVerify,
-     registerUserEmailPassword
+  const {
+    signInUsingGoogle,
+    signInUsingGithub,
+    signInUsingFacebook,
+    emailVerify,
+    registerUserEmailPassword
    } = useAuth();
    const location = useLocation();
   const [email, setEmail] = useState(" ");
+  const [name, setName] = useState(' ');
   const [password, setPassword] = useState(' ');
   const [error, setError] = useState(' ');
   const [isLogin, setIsLogin] = useState(false);
@@ -35,7 +36,10 @@ const Register = () => {
       history.push(redirect_Url);
     });
   };
-  
+  const handleDisplayName = (e) => {
+    e.preventDefault();
+    setName(e.target.value);
+  }
   const handleEmail = (e) => {
     e.preventDefault();
     setEmail(e.target.value);
@@ -91,7 +95,7 @@ const Register = () => {
                 displayName
               </label>
               <input
-                // onBlur={handleEmail}
+                onBlur={handleDisplayName}
                 className="w-full border-2 border-gray-200 p-1 rounded outline-none focus:border-purple-500"
                 type="text"
                 id=""

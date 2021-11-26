@@ -12,7 +12,8 @@ const Login = () => {
     signInUsingGithub,
     signInUsingFacebook,
     signInEmailPassword,
-    emailVerify
+    emailVerify,
+     passwordReset
   } = useAuth();
   const location = useLocation();
   // console.log(location.state?.from);
@@ -41,7 +42,8 @@ const Login = () => {
    const handlePassword = (e) => {
      e.preventDefault();
      setPassword(e.target.value);
-   };
+  };
+  
   const handleEmailPassword = (e)=> {
     e.preventDefault();
     setIsLogin(true);
@@ -53,6 +55,11 @@ const Login = () => {
       })
     }).catch(error => console.log(error.message));
 
+  }
+  const handlePasswordReset = () => {
+    passwordReset(email).then(() => {
+      console.log("Send password Reset")
+    }).catch(error => console.log(error.message));
   }
   return (
     <div className="min-h-screen flex items-center justify-center flex-col bg-gray-200 ">
@@ -110,9 +117,9 @@ const Login = () => {
               placeholder="password"
             />
           </div>
-            <Link className="text-blue-600 mx-1 text-left">
+            <p onClick={handlePasswordReset} className="text-blue-600 mx-1 text-left cursor-pointer">
               Forgot password?
-            </Link>
+            </p>
           <button
             onClick={handleEmailPassword}
             type="button"

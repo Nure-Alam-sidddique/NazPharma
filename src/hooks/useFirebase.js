@@ -4,7 +4,8 @@ import {
     getAuth,
     GithubAuthProvider,
     GoogleAuthProvider,
-    onAuthStateChanged, sendEmailVerification, signInWithEmailAndPassword,
+    onAuthStateChanged,
+    sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword,
     signInWithPopup,
     signOut
 } from "firebase/auth";
@@ -24,11 +25,14 @@ const useFirebase = () => {
     }
     // console.log(user);
     useEffect(() => {
-        onAuthStateChanged(auth, (user) => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user);
             }
-        })
+        });
+        return () => {
+            unsubscribe();
+        }
     }, []);
 
     const signInUsingGithub = () => {
@@ -48,6 +52,11 @@ const useFirebase = () => {
     const emailVerify = () => {
         return sendEmailVerification(auth.currentUser);
     }
+    
+    const passwordReset = (email) => {
+     return   sendPasswordResetEmail(auth, email);
+    }
+
     const logout = () => {
         signOut(auth).then(() => {
             setUser({});
@@ -62,7 +71,8 @@ const useFirebase = () => {
       signInUsingFacebook,
      registerUserEmailPassword,
         signInEmailPassword,
-     emailVerify
+        emailVerify,
+        passwordReset
     };
 
 }
